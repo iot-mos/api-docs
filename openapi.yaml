@@ -12,7 +12,7 @@ info:
     3. 画面右上にある緑色の Authorize ボタンをクリックし、取得したJWTを貼り付けてから「Authorize」をクリックしてください。
     4. これで、他のすべてのエンドポイントにて「Try it out」機能をご利用いただけます。
     
-    本API群は、センサーを搭載したIoTセンサーの状態を監視・管理するための情報を提供します。主に以下の2つの用途に対応しています。
+    本API群は、センサーを搭載したIoTセンサーの状態を監視・管理するための情報を提供します。主に以下の3つの用途に対応しています。
     
     - **最新ステータス取得API** (`/api/v2/booth-status-latest/**`)
        最新のセンサー状態を取得するためのエンドポイントです。リアルタイムでの状況把握に利用できます。
@@ -86,10 +86,10 @@ paths:
                   value:
                     message: "Invalid credentials"
 
-  /api/v2/booth-status-latest/by-building-id/{buildingId}:
+  /api/v2/booth-status-latest/by-building-id/{拠点No.}:
     get:
       tags: [Booth status]
-      summary: 指定したビルに登録されている全センサーの最新ステータスを取得します。
+      summary: 指定した拠点に登録されている全センサーの最新ステータスを取得します。
 
       parameters:
         - $ref: "#/components/parameters/BuildingId"
@@ -129,10 +129,10 @@ paths:
         "401":
           $ref: "#/components/responses/Unauthorized"
 
-  /api/v2/booth-status-latest/by-room-id/{roomId}:
+  /api/v2/booth-status-latest/by-room-id/{施設No.}:
     get:
       tags: [Booth status]
-      summary: 指定したルーム内の全センサーの最新ステータスを取得します。
+      summary: 指定した施設内の全センサーの最新ステータスを取得します。
       parameters:
         - $ref: "#/components/parameters/RoomId"
       responses:
@@ -183,10 +183,10 @@ paths:
         "401":
           $ref: "#/components/responses/Unauthorized"
 
-  /api/v2/booth-occupancy-latest/by-building-id/{buildingId}:
+  /api/v2/booth-occupancy-latest/by-building-id/{拠点No.}:
     get:
       tags: [Booth occupancy]
-      summary: 指定したビルに登録されている全ルームの現在の占有率を取得します。
+      summary: 指定した拠点に登録されている全施設の現在の占有率を取得します。
       parameters:
         - $ref: "#/components/parameters/BuildingId"
       responses:
@@ -224,10 +224,10 @@ paths:
         "401":
           $ref: "#/components/responses/Unauthorized"
 
-  /api/v2/booth-occupancy-latest/by-room-id/{roomId}:
+  /api/v2/booth-occupancy-latest/by-room-id/{施設No.}:
     get:
       tags: [Booth occupancy]
-      summary: 指定したルームの現在の占有率を取得します。
+      summary: 指定した施設の現在の占有率を取得します。
       parameters:
         - $ref: "#/components/parameters/RoomId"
       responses:
