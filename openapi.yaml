@@ -328,7 +328,7 @@ components:
 
   parameters:
     BuildingId:
-      name: buildingId
+      name: 拠点No.
       in: path
       required: true
       description: Building identifier as registered in BoothRegistry.
@@ -336,7 +336,7 @@ components:
         type: string
         example: "38"
     RoomId:
-      name: roomId
+      name: 施設No.
       in: path
       required: true
       description: Room identifier as registered in BoothRegistry.
@@ -344,7 +344,7 @@ components:
         type: string
         example: "69"
     BoothId:
-      name: boothId
+      name: センサーNo.
       in: path
       required: true
       description: Booth identifier as registered in BoothRegistry.
