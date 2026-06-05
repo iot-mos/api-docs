@@ -255,7 +255,7 @@ paths:
         "401":
           $ref: "#/components/responses/Unauthorized"
 
-  /api/v2/booth-status-history/by-booth-id/{boothId}:
+  /api/v2/booth-status-history/by-booth-id/{センサーNo.}:
     get:
       tags: [Booth history]
       summary: 指定した日付範囲の間に記録されたセンサーの履歴データを取得します。
